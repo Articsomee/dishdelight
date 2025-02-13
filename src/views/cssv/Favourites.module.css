@@ -1,0 +1,10 @@
+.favourites {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.content {
+  justify-content: center;
+}

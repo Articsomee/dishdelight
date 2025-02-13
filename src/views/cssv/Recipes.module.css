@@ -1,0 +1,32 @@
+.recipes {
+  padding: 50px;
+  text-align: center;
+  padding-inline: 10%;
+}
+
+.recipeList {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 10px;
+  justify-content: center; /* Center the cards */
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  padding-bottom: 16px; /* Add padding to avoid scrollbar overlap */
+}
+
+.recipeList > div {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  scroll-snap-align: start; /* Snap to the start of each card */
+}
+
+@media (max-width: 1500px) {
+  .recipeList {
+    justify-content: start; /* Center the cards when all are visible */
+  }
+}
+
+@media (max-width: 768px) {
+  .recipeList {
+    flex-direction: column;
+    overflow-x: visible; /* Disable horizontal scrolling on small screens */
+  }
+}

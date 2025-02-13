@@ -1,0 +1,60 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px; /* 1.5rem converted to 24px */
+  margin: 24px; /* 1.5rem converted to 24px */
+  width: 350px; /* 21.875rem converted to 350px */
+  text-align: left; /* Justify text to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure the image corners are rounded within the card */
+}
+
+.cardImage {
+  width: 100%; /* Make the image take the full width of the card */
+  aspect-ratio: 4 / 3; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 8px; /* Apply rounded corners to all corners */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating span {
+  margin-left: 5px; /* 0.3125rem converted to 5px */
+  font-weight: bold;
+  font-size: 16px; /* 1rem converted to 16px */
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 32px; /* 2rem converted to 32px */
+}
+
+.card p {
+  margin: 12px 0; /* 0.75rem converted to 12px */
+}
+
+.cardFooter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.boldP {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    margin: 24px 0; /* 1.5rem converted to 24px */
+  }
+}
