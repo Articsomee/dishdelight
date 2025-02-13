@@ -1,11 +1,11 @@
 .card {
-  border: 1px solid #ddd;
+  border: 1px solid #2d2d2d;
+  background-color: #2d2d2d;
   border-radius: 8px;
   padding: 24px; /* 1.5rem converted to 24px */
   margin: 24px; /* 1.5rem converted to 24px */
   width: 350px; /* 21.875rem converted to 350px */
   text-align: left; /* Justify text to the left */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure the image corners are rounded within the card */
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CardForm from "./CardForm"; // Assuming you have a CardForm component
+import CardForm from "./CardForm";
 import styles from "./cssc/Form.module.css";
 
 const Form = ({ onSave }) => {
@@ -8,7 +8,6 @@ const Form = ({ onSave }) => {
     category: "",
     time: "",
     rating: "",
-    image: "",
     steps: [""],
   });
   const [cards, setCards] = useState([]);
@@ -21,17 +20,6 @@ const Form = ({ onSave }) => {
   const handleChange = (e) => {
     const { value, name } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prev) => ({ ...prev, image: reader.result }));
-      };
-      reader.readAsDataURL(file);
-    }
   };
 
   const handleStepChange = (index, value) => {
@@ -61,12 +49,13 @@ const Form = ({ onSave }) => {
     const updatedCards = [...cards, newCard];
     setCards(updatedCards);
     localStorage.setItem("cards", JSON.stringify(updatedCards));
+
+    // Reset the form data
     setFormData({
       dishName: "",
       category: "",
       time: "",
       rating: "",
-      image: "",
       steps: [""],
     });
   };
@@ -87,16 +76,6 @@ const Form = ({ onSave }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.preview}>
-        {cards.map((card, index) => (
-          <CardForm
-            key={index}
-            {...card}
-            onEdit={(updatedCard) => handleEdit(index, updatedCard)}
-            onDelete={() => handleDelete(index)}
-          />
-        ))}
-      </div>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
@@ -130,14 +109,6 @@ const Form = ({ onSave }) => {
           onChange={handleChange}
           required
         />
-        <input type="file" accept="image/*" onChange={handleImageUpload} />
-        {formData.image && (
-          <img
-            src={formData.image}
-            alt="Preview"
-            className={styles.imagePreview}
-          />
-        )}
         <div className={styles.stepsContainer}>
           <h4>Instructions:</h4>
           {formData.steps.map((step, index) => (
@@ -167,8 +138,20 @@ const Form = ({ onSave }) => {
             Add Step
           </button>
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" className={styles.saveButton}>
+          Save
+        </button>
       </form>
+      <div className={styles.preview}>
+        {cards.map((card, index) => (
+          <CardForm
+            key={index}
+            {...card}
+            onEdit={(updatedCard) => handleEdit(index, updatedCard)}
+            onDelete={() => handleDelete(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

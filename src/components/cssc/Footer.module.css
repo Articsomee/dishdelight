@@ -1,15 +1,12 @@
 .footer {
-  display: flex;
-  justify-content: center; /* Center the content */
-  align-items: center;
-  padding: 10px 10%;
-  background-color: #f8f9fa;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Shadow on top */
-  position: relative;
-  z-index: 1000;
+  background-color: #252525; /* Dark background */
+  color: #f5f5f5; /* Light text */
+  padding: 20px;
+  text-align: center;
 }
 
 .footerText {
-  font-size: 16px;
-  color: #333;
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff; /* Light grey text */
 }

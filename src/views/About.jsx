@@ -1,25 +1,22 @@
+import React from "react";
 import styles from "./cssv/About.module.css";
+import aboutImage from "../assets/images/aboutus.webp"; // Adjust the path as needed
 
 const About = () => {
   return (
     <div className={styles.about}>
-      <h1>About</h1>
       <div className={styles.content}>
-        <img
-          src="../components/assets/images/aboutus.webp"
-          alt="About DishDelights"
-          className={styles.image}
-        />
-        <p>
-          DishDelights is a vibrant global community that brings food lovers
-          together through a shared passion for cooking and culinary
-          exploration. With an extensive collection of recipes, we celebrate
-          diverse cuisines and cater to all tastes and dietary needs. Our
-          mission is to inspire and empower home cooks by providing detailed,
-          easy-to-follow recipes that make creating delicious meals a joy for
-          everyone. Join us and discover the world of flavours at your
-          fingertips!
-        </p>
+        <img src={aboutImage} alt="About Us" className={styles.image} />
+        <div className={styles.textContent}>
+          <h1>About Us</h1>
+          <p>
+            Welcome to DishDelight! We are passionate about bringing you the
+            best recipes from around the world. Our mission is to make cooking
+            easy and enjoyable for everyone. Whether you're a beginner or a
+            seasoned chef, you'll find something to inspire you in our
+            collection of delicious recipes.
+          </p>
+        </div>
       </div>
     </div>
   );

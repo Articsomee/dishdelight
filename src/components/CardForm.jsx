@@ -6,7 +6,6 @@ const CardForm = ({
   category,
   time,
   rating,
-  image,
   steps,
   onEdit,
   onDelete,
@@ -18,24 +17,12 @@ const CardForm = ({
     category,
     time,
     rating,
-    image,
     steps,
   });
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
     setEditedData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setEditedData((prev) => ({ ...prev, image: reader.result }));
-      };
-      reader.readAsDataURL(file);
-    }
   };
 
   const handleStepChange = (index, value) => {
@@ -92,14 +79,6 @@ const CardForm = ({
             value={editedData.rating}
             onChange={handleEditChange}
           />
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-          {editedData.image && (
-            <img
-              src={editedData.image}
-              alt="Edit Preview"
-              className={styles.imagePreview}
-            />
-          )}
           <div className={styles.stepsContainer}>
             <h4>Instructions:</h4>
             {editedData.steps.map((step, index) => (
@@ -128,12 +107,18 @@ const CardForm = ({
               Add Step
             </button>
           </div>
-          <button onClick={handleSaveEdit}>Save</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
+          <button onClick={handleSaveEdit} className={styles.SaveButton}>
+            Save
+          </button>
+          <button
+            onClick={() => setIsEditing(false)}
+            className={styles.CancelButton}
+          >
+            Cancel
+          </button>
         </div>
       ) : (
         <>
-          <img src={image} alt={dishName} className={styles.cardImage} />
           <div
             className={styles.cardContent}
             onClick={() => setShowInstructions(!showInstructions)}
@@ -154,8 +139,15 @@ const CardForm = ({
             )}
           </div>
           <div className={styles.cardActions}>
-            <button onClick={() => setIsEditing(true)}>Edit</button>
-            <button onClick={onDelete}>Delete</button>
+            <button
+              className={styles.EditButton}
+              onClick={() => setIsEditing(true)}
+            >
+              Edit
+            </button>
+            <button className={styles.DeleteButton} onClick={onDelete}>
+              Delete
+            </button>
           </div>
         </>
       )}

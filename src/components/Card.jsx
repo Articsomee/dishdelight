@@ -2,9 +2,9 @@ import styles from "./cssc/Card.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ title, time, rating, image }) => {
+const Card = ({ title, time, rating, image, className, style }) => {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${className}`} style={style}>
       <img src={image} alt={title} className={styles.cardImage} />
       <div className={styles.cardHeader}>
         <h3>{title}</h3>

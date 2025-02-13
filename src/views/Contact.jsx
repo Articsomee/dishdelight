@@ -1,9 +1,18 @@
+import React from "react";
+import styles from "./cssv/About.module.css"; // Reuse the About styles
+import contactImage from "../assets/images/austria.webp"; // Use the same image or replace with a contact-specific image
+
 const Contact = () => {
   return (
-    <div className="contact">
-      <h1>Contact</h1>
-      <div className="content">
-        <div className="text">
+    <div className={styles.about}>
+      <div className={styles.content}>
+        <img
+          src={contactImage} // Use the imported image
+          alt="Contact DishDelights"
+          className={styles.image}
+        />
+        <div className={styles.textContent}>
+          <h1>Contact</h1>
           <p>Phone: +123 456 789</p>
           <p>Email: dishdelight@gmail.com</p>
           <p>
@@ -16,7 +25,6 @@ const Contact = () => {
             soon as possible.
           </p>
         </div>
-        <img src="contact-image.jpg" alt="Contact DishDelights" />
       </div>
     </div>
   );

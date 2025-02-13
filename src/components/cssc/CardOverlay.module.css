@@ -1,0 +1,50 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlayContent {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.instructions {
+  margin-top: 20px;
+  font-size: 20px;
+  max-width: 600px;
+  padding-inline: 60px;
+}
+
+.instructions ol {
+  padding-left: 20px; /* Add indentation */
+  margin-top: 10px; /* Add spacing */
+}
+
+.overlayCard {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin: 0 auto; /* Center the card */
+  box-shadow: none; /* Remove shadow if needed */
+  border-radius: 10px; /* Add custom border radius */
+  border: none;
+}
