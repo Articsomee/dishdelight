@@ -14,7 +14,7 @@ export default function Header() {
     <header className={styles.header}>
       {/* Logo */}
       <div className={styles.logo}>
-        <Link to="/">
+        <Link to="/dishdelight/">
           <img src={logo} alt="Logo" className={styles.logoImage} />
         </Link>
       </div>
