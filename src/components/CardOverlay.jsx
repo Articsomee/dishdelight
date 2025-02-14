@@ -6,14 +6,17 @@ const CardOverlay = ({ title, time, rating, image, instructions, onClose }) => {
   const overlayRef = useRef();
 
   const handleClickOutside = (event) => {
+    // Close the overlay if the user clicks outside of it
     if (overlayRef.current && !overlayRef.current.contains(event.target)) {
       onClose();
     }
   };
 
   useEffect(() => {
+    // Add event listener to detect clicks outside the overlay
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
+      // Clean up the event listener when the component unmounts
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
@@ -21,6 +24,7 @@ const CardOverlay = ({ title, time, rating, image, instructions, onClose }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.overlayContent} ref={overlayRef}>
+        {/* Button to close the overlay */}
         <button className={styles.closeButton} onClick={onClose}>
           X
         </button>
@@ -34,6 +38,7 @@ const CardOverlay = ({ title, time, rating, image, instructions, onClose }) => {
         />
         <div className={styles.instructions}>
           <h4>Preparation:</h4>
+          {/* Display the preparation instructions */}
           <p>{instructions}</p>
         </div>
       </div>

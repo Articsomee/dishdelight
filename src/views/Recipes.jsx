@@ -12,6 +12,7 @@ const Recipes = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Sample recipes data
   const recipes = [
     {
       image: carbonara,
@@ -42,16 +43,19 @@ const Recipes = () => {
     },
   ];
 
+  // Handle card click to show overlay
   const handleCardClick = (recipe) => {
     setSelectedRecipe(recipe);
     setShowOverlay(true);
   };
 
+  // Handle closing the overlay
   const handleCloseOverlay = () => {
     setShowOverlay(false);
     setSelectedRecipe(null);
   };
 
+  // Filter recipes based on search term and selected category
   const filteredRecipes = recipes.filter((recipe) => {
     const matchesCategory =
       selectedCategory === "All" || recipe.category === selectedCategory;

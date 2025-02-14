@@ -1,13 +1,17 @@
 .container {
   width: 600px;
-
-  min-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #2b2b2b;
   border-radius: 8px;
   background-color: #1e1e1e; /* Dark background */
   color: #f5f5f5; /* Light text */
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 300px;
+  }
 }
 
 .form {
@@ -31,7 +35,7 @@
   color: #888; /* Light placeholder text */
 }
 
-/* Base button style */
+/* Button styles */
 button {
   padding: 8px 16px;
   border: none;
@@ -47,30 +51,12 @@ button {
   background-color: #d07b27;
 }
 
-button:hover {
-  transform: translateY(-1px); /* Slight lift on hover */
-}
-
-button:active {
-  transform: translateY(0); /* Reset lift on click */
-}
-
-/* Primary buttons (e.g., Save) */
 button.primary {
-  background-color: #8c8c8c; /* Blue */
+  background-color: #8c8c8c;
 }
 
-button.primary:hover {
-  background-color: #8c8c8c; /* Darker blue */
-}
-
-/* Secondary buttons (e.g., Cancel) */
 button.secondary {
-  background-color: #6c757d; /* Grey */
-}
-
-button.secondary:hover {
-  background-color: #5a6268; /* Darker grey */
+  background-color: #6c757d;
 }
 
 .stepsContainer {
@@ -98,10 +84,6 @@ button.secondary:hover {
   background-color: #dc3545; /* Red */
 }
 
-.deleteStepButton:hover {
-  background-color: #c82333; /* Darker red */
-}
-
 .addStepButton {
   background-color: #b7b7b7; /* Blue */
 }
@@ -115,5 +97,5 @@ button.secondary:hover {
 .form select:focus,
 .form button:focus {
   outline: none; /* Remove the default outline */
-  border-color: #d3cac248; /* Subtle blue glow */
+  border-color: #d3cac248;
 }

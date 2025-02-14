@@ -36,7 +36,10 @@ export default function Header() {
       </nav>
 
       {/* Burger Menu */}
-      <div className={styles.burgerMenu} onClick={toggleMenu}>
+      <div
+        className={`${styles.burgerMenu} ${isMenuOpen ? styles.open : ""}`}
+        onClick={toggleMenu}
+      >
         <div className={styles.burgerMenuLine}></div>
         <div className={styles.burgerMenuLine}></div>
         <div className={styles.burgerMenuLine}></div>
@@ -44,16 +47,19 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       <div className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ""}`}>
-        <Link to="/Recipes" className={styles.navLink} onClick={toggleMenu}>
+        <button className={styles.closeButton} onClick={toggleMenu}>
+          &times; {/* Close icon */}
+        </button>
+        <Link to="Recipes" className={styles.navLink} onClick={toggleMenu}>
           Recipes
         </Link>
-        <Link to="/About" className={styles.navLink} onClick={toggleMenu}>
+        <Link to="About" className={styles.navLink} onClick={toggleMenu}>
           About
         </Link>
-        <Link to="/Contact" className={styles.navLink} onClick={toggleMenu}>
+        <Link to="Contact" className={styles.navLink} onClick={toggleMenu}>
           Contact
         </Link>
-        <Link to="/Favourites" className={styles.navLink} onClick={toggleMenu}>
+        <Link to="Favourites" className={styles.navLink} onClick={toggleMenu}>
           Favourites
         </Link>
       </div>

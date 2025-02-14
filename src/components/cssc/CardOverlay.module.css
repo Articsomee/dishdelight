@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; /* Make sure overlay is on top */
 }
 
 .overlayContent {
@@ -36,15 +36,15 @@
 }
 
 .instructions ol {
-  padding-left: 20px; /* Add indentation */
-  margin-top: 10px; /* Add spacing */
+  padding-left: 20px; /* Indent list */
+  margin-top: 10px;
 }
 
 .overlayCard {
   width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  margin: 0 auto; /* Center the card */
-  box-shadow: none; /* Remove shadow if needed */
-  border-radius: 10px; /* Add custom border radius */
+  max-width: 500px; /* Limit card width */
+  margin: 0 auto;
+  box-shadow: none;
+  border-radius: 10px; /* Rounded corners */
   border: none;
 }

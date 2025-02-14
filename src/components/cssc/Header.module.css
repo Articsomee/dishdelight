@@ -1,10 +1,11 @@
 .header {
-  background-color: #252525; /* Dark background */
-  color: #f5f5f5; /* Light text */
+  background-color: #252525;
+  color: #f5f5f5;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* For positioning the mobile nav */
 }
 
 .logo {
@@ -22,14 +23,14 @@
 }
 
 .navLink {
-  color: #f5f5f5; /* Light text */
+  color: #f5f5f5;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: #f28c28; /* Blue on hover */
+  color: #f28c28; /* Orange on hover */
 }
 
 .burgerMenu {
@@ -37,33 +38,76 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  padding: 10px; /* Add padding for better click area */
 }
 
 .burgerMenuLine {
   width: 25px;
   height: 3px;
-  background-color: #f5f5f5; /* Light color for burger lines */
+  background-color: #f5f5f5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Burger menu animation */
+.burgerMenu.open .burgerMenuLine:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burgerMenu.open .burgerMenuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerMenu.open .burgerMenuLine:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobileNav {
-  display: none;
+  display: flex;
   flex-direction: column;
-  gap: 10px;
-  background-color: #2d2d2d; /* Dark background for mobile nav */
-  position: absolute;
-  top: 70px; /* Adjust based on header height */
-  right: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #444; /* Dark border */
+  gap: 20px;
+  background-color: #2d2d2d;
+  position: fixed; /* Fixed position to cover the screen */
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 300px;
+  height: 100vh; /* Full height */
+  padding: 80px 20px 20px;
+  border-left: 1px solid #444;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2); /* Shadow on the left */
+  transition: right 0.3s ease; /* Smooth slide-in animation */
+  z-index: 1000; /* Ensure it appears above other content */
 }
 
 .mobileNav.open {
-  display: flex;
+  right: 0; /* Slide in from the right */
+}
+
+.closeButton {
+  position: absolute;
+  top: 9px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #f5f5f5;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.mobileNav .navLink {
+  align-self: self-end;
+  font-size: 25px;
+  padding: 10px;
+  padding-right: 60px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.mobileNav .navLink:hover {
+  color: #f28c28;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .nav {
     display: none;
   }
@@ -73,10 +117,6 @@
   }
 
   .mobileNav {
-    display: none;
-  }
-
-  .mobileNav.open {
     display: flex;
   }
 }

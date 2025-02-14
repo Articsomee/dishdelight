@@ -3,6 +3,7 @@ import CardForm from "./CardForm";
 import styles from "./cssc/Form.module.css";
 
 const Form = ({ onSave }) => {
+  // Initialize form data state
   const [formData, setFormData] = useState({
     dishName: "",
     category: "",
@@ -10,18 +11,23 @@ const Form = ({ onSave }) => {
     rating: "",
     steps: [""],
   });
+
+  // Initialize cards state
   const [cards, setCards] = useState([]);
 
+  // Load saved cards from localStorage on component mount
   useEffect(() => {
     const savedCards = JSON.parse(localStorage.getItem("cards")) || [];
     setCards(savedCards);
   }, []);
 
+  // Handle input changes for form fields
   const handleChange = (e) => {
     const { value, name } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Handle changes for steps input fields
   const handleStepChange = (index, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -29,6 +35,7 @@ const Form = ({ onSave }) => {
     }));
   };
 
+  // Add a new step input field
   const addStep = () => {
     setFormData((prev) => ({
       ...prev,
@@ -36,6 +43,7 @@ const Form = ({ onSave }) => {
     }));
   };
 
+  // Remove a step input field
   const removeStep = (index) => {
     setFormData((prev) => ({
       ...prev,
@@ -43,6 +51,7 @@ const Form = ({ onSave }) => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const newCard = { ...formData };
@@ -60,6 +69,7 @@ const Form = ({ onSave }) => {
     });
   };
 
+  // Handle editing a card
   const handleEdit = (index, updatedCard) => {
     const updatedCards = cards.map((card, i) =>
       i === index ? updatedCard : card
@@ -68,6 +78,7 @@ const Form = ({ onSave }) => {
     localStorage.setItem("cards", JSON.stringify(updatedCards));
   };
 
+  // Handle deleting a card
   const handleDelete = (index) => {
     const updatedCards = cards.filter((_, i) => i !== index);
     setCards(updatedCards);

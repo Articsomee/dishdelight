@@ -123,14 +123,19 @@ const CardForm = ({
             className={styles.cardContent}
             onClick={() => setShowInstructions(!showInstructions)}
           >
+            {/* Display the dish name */}
             <h3>{dishName}</h3>
+            {/* Display the category of the dish */}
             <p>Category: {category}</p>
+            {/* Display the time required to prepare the dish */}
             <p>Time: {time}</p>
+            {/* Display the rating of the dish */}
             <p>Rating: {rating}</p>
             {showInstructions && (
               <>
                 <h4>Instructions:</h4>
                 <ol>
+                  {/* Loop through and display each step of the instructions */}
                   {steps.map((step, index) => (
                     <li key={index}>{step}</li>
                   ))}
@@ -139,12 +144,14 @@ const CardForm = ({
             )}
           </div>
           <div className={styles.cardActions}>
+            {/* Button to enable editing mode */}
             <button
               className={styles.EditButton}
               onClick={() => setIsEditing(true)}
             >
               Edit
             </button>
+            {/* Button to delete the dish */}
             <button className={styles.DeleteButton} onClick={onDelete}>
               Delete
             </button>

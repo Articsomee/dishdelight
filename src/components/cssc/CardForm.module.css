@@ -3,8 +3,8 @@
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
-  background-color: #2d2d2d; /* Dark card background */
-  color: #f5f5f5; /* Light text */
+  background-color: #2d2d2d;
+  color: #f5f5f5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -14,12 +14,12 @@
 
 .cardContent h3 {
   margin: 0 0 8px 0;
-  color: #f5f5f5; /* Light text */
+  color: #f5f5f5;
 }
 
 .cardContent p {
   margin: 0 0 8px 0;
-  color: #ccc; /* Light grey text */
+  color: #ccc;
 }
 
 .cardActions {
@@ -41,25 +41,25 @@ button {
 }
 
 button:hover {
-  transform: translateY(-1px); /* Slight lift on hover */
+  transform: translateY(-1px);
 }
 
 button:active {
-  transform: translateY(0); /* Reset lift on click */
+  transform: translateY(0);
 }
 
 /* Primary buttons (e.g., Edit) */
 button.primary {
-  background-color: #d07b27; /* Blue */
+  background-color: #d07b27;
 }
 
 /* Danger buttons (e.g., Delete) */
 button.danger {
-  background-color: #dc3545; /* Red */
+  background-color: #dc3545;
 }
 
 button.danger:hover {
-  background-color: #c82333; /* Darker red */
+  background-color: #c82333;
 }
 
 .editForm {
@@ -74,16 +74,16 @@ button.danger:hover {
   padding: 8px;
   border: 1px solid #2d2d2d;
   border-radius: 4px;
-  background-color: #404040; /* Dark input background */
-  color: #f5f5f5; /* Light text */
+  background-color: #404040;
+  color: #f5f5f5;
 }
 
 .editForm button.save {
-  background-color: #d07b27; /* Blue */
+  background-color: #d07b27;
 }
 
 .editForm button.cancel {
-  background-color: #6c757d; /* Grey */
+  background-color: #6c757d;
 }
 
 .stepsContainer {
@@ -103,16 +103,16 @@ button.danger:hover {
   padding: 8px;
   border: 1px solid #2d2d2d;
   border-radius: 4px;
-  background-color: #404040; /* Dark textarea background */
-  color: #f5f5f5; /* Light text */
+  background-color: #404040;
+  color: #f5f5f5;
 }
 
 .deleteStepButton {
-  background-color: #a8333e; /* Red */
+  background-color: #a8333e;
 }
 
 .addStepButton {
-  background-color: #b7b7b7; /* Blue */
+  background-color: #b7b7b7;
 }
 
 .SaveButton {
@@ -135,6 +135,6 @@ button.danger:hover {
 .editForm textarea:focus,
 .editForm select:focus,
 .editForm button:focus {
-  outline: none; /* Remove the default outline */
-  border-color: #d3cac248; /* Subtle blue glow */
+  outline: none;
+  border-color: #d3cac248; /* For highliting the input field */
 }
